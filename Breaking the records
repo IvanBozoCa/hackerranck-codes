@@ -1,0 +1,45 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'breakingRecords' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY scores as parameter.
+#
+
+def breakingRecords(scores):
+    # Write your code here
+    mima= [scores[0],scores[0]]
+    contadormin=0
+    contadormax=0
+    for i in scores:
+        
+        if i > mima[1]:
+            mima = [mima[0],i]
+            contadormin = contadormin +1
+        elif i < mima[0]:
+            mima = [i,mima[1]]
+            contadormax= contadormax+1
+    contador = [contadormin,contadormax]
+    return contador
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    scores = list(map(int, input().rstrip().split()))
+
+    result = breakingRecords(scores)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
