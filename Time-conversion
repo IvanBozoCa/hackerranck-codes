@@ -1,0 +1,206 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    sp=''.join(map(str, s))
+    mirar=[]
+    # Write your code here
+    split = sp.split(":")
+    hora=[]
+    mirar2 = split[2]
+    mirar.append(mirar2[0])
+    mirar.append(mirar2[1])
+    mirar =''.join(map(str, mirar))
+    #split[2]#tenemos si es Pm o Am
+    if (mirar2[2]=='P'):
+        if (split[0]== "01"):
+            hora =[13]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "02"):
+            hora =[14]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "03"):  
+            hora =[15] 
+            hora.append(":")
+            hora.append(split[1]) 
+            hora.append(":")
+            hora.append(mirar)    
+        elif (split[0]=="04"):  
+            hora =[16] 
+            hora.append(":")
+            hora.append(split[1]) 
+            hora.append(":")
+            hora.append(mirar)        
+        elif (split[0]== "05"):
+            hora =[17]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "06"):
+            hora =[18]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)            
+        elif (split[0]== "07"):
+            hora =[19]
+            hora.append(":")
+            hora.append(split[1]) 
+            hora.append(":")
+            hora.append(mirar)           
+        elif (split[0]== "08"): 
+            hora =[20]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "09"):        
+            hora =[21]
+            hora.append(":")
+            hora.append(split[1]) 
+            hora.append(":")
+            hora.append(mirar)  
+        elif (split[0]== "10"):        
+            hora =[22] 
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)      
+        elif (split[0]== "11"):        
+            hora =[23] 
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)            
+        elif (split[0]== "00"):        
+            hora =[24]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        else:
+            hora.append(split[0])
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+    else:
+        if (split[0]== "12"):
+            hora =["00"]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "13"):
+            hora =["01"]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "14"):
+            hora =["02"]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "15"):  
+            hora =["03"] 
+            hora.append(":")
+            hora.append(split[1]) 
+            hora.append(":")
+            hora.append(mirar)    
+        elif (split[0]==" 16"):  
+            hora =["04"] 
+            hora.append(":")
+            hora.append(split[1]) 
+            hora.append(":")
+            hora.append(mirar)        
+        elif (split[0]== "17"):
+            hora =["05"]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "18"):
+            hora =["06"]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)            
+        elif (split[0]== "19"):
+            hora =["07"]
+            hora.append(":")
+            hora.append(split[1]) 
+            hora.append(":")
+            hora.append(mirar)           
+        elif (split[0]== "20"): 
+            hora =["08"]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        elif (split[0]== "21"):        
+            hora =["09"]
+            hora.append(":")
+            hora.append(split[1]) 
+            hora.append(":")
+            hora.append(mirar)  
+        elif (split[0]== "22"):        
+            hora =[10] 
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)      
+        elif (split[0]== "23"):        
+            hora =[11] 
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)            
+        elif (split[0]== "24"):        
+            hora =[12]
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+        else:
+            hora.append(split[0])
+            hora.append(":")
+            hora.append(split[1])
+            hora.append(":")
+            hora.append(mirar)
+    hora =''.join(map(str, hora))
+        
+    return hora
+            
+                       
+            
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
