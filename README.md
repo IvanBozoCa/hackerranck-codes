@@ -1,2 +1,2 @@
-# hackerranck-codes
+# hackerrank-codes
 Soluciones preguntas realizadas en hackerranck
