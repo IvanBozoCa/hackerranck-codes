@@ -1,0 +1,53 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'hourglassSum' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+#
+
+def hourglassSum(arr):
+    # Write your code here
+    #largo y ancho de la matriz
+    x=5
+    y = 5
+    #suma de hourg
+    suma =0
+    #se inicia negativo para encontrar el negativo mas cercano a 0
+    hourg=-5000
+    #recorrer el filasa
+    for i in range(0,x-1):
+        #recorrer columnas
+        for j in range(0,y-1):
+            #suma de hourg
+            suma =(arr[i][j]+arr[i][j+1]+arr[i][j+2]+arr[i+1][j+1]+arr[i+2][j]+arr[i+2][j+1]+arr[i+2][j+2])
+            if suma > hourg:
+                #obtenemos el maximo de hourg
+                hourg= suma
+            else:
+                continue
+            
+    return hourg
+#fin de la funcion
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr = []
+
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = hourglassSum(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
