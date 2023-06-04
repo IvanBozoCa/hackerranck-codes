@@ -5,8 +5,8 @@ HackerRank es una plataforma que se enfoca en desafíos de programación competi
 Instalación
 
 Para usar HackerRank y revisar las soluciones presentadas, debes registrarte en la plataforma. No se necesita configuración adicional de software en tu computadora.
-Uso
 
+##Uso
 Por el momento, este proyecto sirve como un repositorio para ver las soluciones que he creado. Las instrucciones más detalladas sobre cómo ejecutar y verificar las soluciones estarán disponibles en un futuro cercano.
 
 ## Contribución
